@@ -12,6 +12,21 @@
 		B67A21D129E19FBE00CB02BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21D029E19FBE00CB02BF /* SceneDelegate.swift */; };
 		B67A21D829E19FBF00CB02BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67A21D729E19FBF00CB02BF /* Assets.xcassets */; };
 		B67A21DB29E19FBF00CB02BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67A21D929E19FBF00CB02BF /* LaunchScreen.storyboard */; };
+		B67A21E629E1AAD100CB02BF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21E529E1AAD100CB02BF /* Coordinator.swift */; };
+		B67A21E929E1AB9E00CB02BF /* PopularMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21E829E1AB9E00CB02BF /* PopularMoviesViewController.swift */; };
+		B67A21EB29E1ABC600CB02BF /* PopularMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21EA29E1ABC600CB02BF /* PopularMoviesView.swift */; };
+		B67A21ED29E1AE7200CB02BF /* PopularMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21EC29E1AE7200CB02BF /* PopularMoviesViewModel.swift */; };
+		B67A21F029E1AF0100CB02BF /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21EF29E1AF0100CB02BF /* HomeTabBarViewController.swift */; };
+		B67A21F329E1AF7D00CB02BF /* SearchMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21F229E1AF7D00CB02BF /* SearchMoviesViewController.swift */; };
+		B67A21F629E1BA1900CB02BF /* HomeMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21F529E1BA1900CB02BF /* HomeMoviesViewController.swift */; };
+		B67A21F829E1BB0900CB02BF /* HomeMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21F729E1BB0900CB02BF /* HomeMoviesView.swift */; };
+		B67A21FB29E1E18A00CB02BF /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21FA29E1E18A00CB02BF /* NetWork.swift */; };
+		B67A21FE29E1E4F400CB02BF /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21FD29E1E4F400CB02BF /* Popular.swift */; };
+		B67A220129E1E7AB00CB02BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220029E1E7AB00CB02BF /* Services.swift */; };
+		B67A220429E1EBB000CB02BF /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220329E1EBB000CB02BF /* Worker.swift */; };
+		B67A220629E1F20A00CB02BF /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220529E1F20A00CB02BF /* NowPlaying.swift */; };
+		B67A220829E1F3FF00CB02BF /* TopRated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220729E1F3FF00CB02BF /* TopRated.swift */; };
+		B67A220A29E1F54B00CB02BF /* UpComing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220929E1F54B00CB02BF /* UpComing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +39,21 @@
 		B67A21D729E19FBF00CB02BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B67A21DA29E19FBF00CB02BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B67A21DC29E19FBF00CB02BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B67A21E529E1AAD100CB02BF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B67A21E829E1AB9E00CB02BF /* PopularMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewController.swift; sourceTree = "<group>"; };
+		B67A21EA29E1ABC600CB02BF /* PopularMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesView.swift; sourceTree = "<group>"; };
+		B67A21EC29E1AE7200CB02BF /* PopularMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesViewModel.swift; sourceTree = "<group>"; };
+		B67A21EF29E1AF0100CB02BF /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		B67A21F229E1AF7D00CB02BF /* SearchMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesViewController.swift; sourceTree = "<group>"; };
+		B67A21F529E1BA1900CB02BF /* HomeMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesViewController.swift; sourceTree = "<group>"; };
+		B67A21F729E1BB0900CB02BF /* HomeMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesView.swift; sourceTree = "<group>"; };
+		B67A21FA29E1E18A00CB02BF /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
+		B67A21FD29E1E4F400CB02BF /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
+		B67A220029E1E7AB00CB02BF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		B67A220329E1EBB000CB02BF /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		B67A220529E1F20A00CB02BF /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
+		B67A220729E1F3FF00CB02BF /* TopRated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRated.swift; sourceTree = "<group>"; };
+		B67A220929E1F54B00CB02BF /* UpComing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				B67A21CD29E19FBE00CB02BF /* TheMoviesDB */,
+				B67A21E229E1AA9200CB02BF /* Source */,
 				B67A21CC29E19FBE00CB02BF /* Products */,
 				18BB6E3B1395321934BE6ACA /* Pods */,
 				2A078F2D6A0E2D631CB8AFC6 /* Frameworks */,
@@ -83,6 +114,108 @@
 				B67A21DC29E19FBF00CB02BF /* Info.plist */,
 			);
 			path = TheMoviesDB;
+			sourceTree = "<group>";
+		};
+		B67A21E229E1AA9200CB02BF /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21E429E1AAA900CB02BF /* Controllers */,
+				B67A21E329E1AAA000CB02BF /* Coordinator */,
+				B67A21FC29E1E4DC00CB02BF /* Model */,
+				B67A21F929E1E16E00CB02BF /* Network */,
+				B67A21FF29E1E75500CB02BF /* NetworkServices */,
+				B67A220229E1EBA100CB02BF /* Worker */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		B67A21E329E1AAA000CB02BF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21E529E1AAD100CB02BF /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B67A21E429E1AAA900CB02BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21F429E1BA0600CB02BF /* HomeMovies */,
+				B67A21F129E1AF5400CB02BF /* SearchMovies */,
+				B67A21EE29E1AEAF00CB02BF /* HomeTabBar */,
+				B67A21E729E1AB4600CB02BF /* PopularMovies */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B67A21E729E1AB4600CB02BF /* PopularMovies */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21EA29E1ABC600CB02BF /* PopularMoviesView.swift */,
+				B67A21E829E1AB9E00CB02BF /* PopularMoviesViewController.swift */,
+				B67A21EC29E1AE7200CB02BF /* PopularMoviesViewModel.swift */,
+			);
+			path = PopularMovies;
+			sourceTree = "<group>";
+		};
+		B67A21EE29E1AEAF00CB02BF /* HomeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21EF29E1AF0100CB02BF /* HomeTabBarViewController.swift */,
+			);
+			path = HomeTabBar;
+			sourceTree = "<group>";
+		};
+		B67A21F129E1AF5400CB02BF /* SearchMovies */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21F229E1AF7D00CB02BF /* SearchMoviesViewController.swift */,
+			);
+			path = SearchMovies;
+			sourceTree = "<group>";
+		};
+		B67A21F429E1BA0600CB02BF /* HomeMovies */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21F729E1BB0900CB02BF /* HomeMoviesView.swift */,
+				B67A21F529E1BA1900CB02BF /* HomeMoviesViewController.swift */,
+			);
+			path = HomeMovies;
+			sourceTree = "<group>";
+		};
+		B67A21F929E1E16E00CB02BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21FA29E1E18A00CB02BF /* NetWork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B67A21FC29E1E4DC00CB02BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B67A220529E1F20A00CB02BF /* NowPlaying.swift */,
+				B67A21FD29E1E4F400CB02BF /* Popular.swift */,
+				B67A220729E1F3FF00CB02BF /* TopRated.swift */,
+				B67A220929E1F54B00CB02BF /* UpComing.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B67A21FF29E1E75500CB02BF /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				B67A220029E1E7AB00CB02BF /* Services.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		B67A220229E1EBA100CB02BF /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				B67A220329E1EBB000CB02BF /* Worker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +332,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67A220129E1E7AB00CB02BF /* Services.swift in Sources */,
+				B67A21F029E1AF0100CB02BF /* HomeTabBarViewController.swift in Sources */,
 				B67A21CF29E19FBE00CB02BF /* AppDelegate.swift in Sources */,
+				B67A21FB29E1E18A00CB02BF /* NetWork.swift in Sources */,
+				B67A220A29E1F54B00CB02BF /* UpComing.swift in Sources */,
 				B67A21D129E19FBE00CB02BF /* SceneDelegate.swift in Sources */,
+				B67A21F629E1BA1900CB02BF /* HomeMoviesViewController.swift in Sources */,
+				B67A21EB29E1ABC600CB02BF /* PopularMoviesView.swift in Sources */,
+				B67A21E629E1AAD100CB02BF /* Coordinator.swift in Sources */,
+				B67A21E929E1AB9E00CB02BF /* PopularMoviesViewController.swift in Sources */,
+				B67A21F329E1AF7D00CB02BF /* SearchMoviesViewController.swift in Sources */,
+				B67A21F829E1BB0900CB02BF /* HomeMoviesView.swift in Sources */,
+				B67A220629E1F20A00CB02BF /* NowPlaying.swift in Sources */,
+				B67A220829E1F3FF00CB02BF /* TopRated.swift in Sources */,
+				B67A21ED29E1AE7200CB02BF /* PopularMoviesViewModel.swift in Sources */,
+				B67A21FE29E1E4F400CB02BF /* Popular.swift in Sources */,
+				B67A220429E1EBB000CB02BF /* Worker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
