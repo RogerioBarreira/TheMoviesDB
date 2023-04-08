@@ -20,6 +20,13 @@
 		B67A21F329E1AF7D00CB02BF /* SearchMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21F229E1AF7D00CB02BF /* SearchMoviesViewController.swift */; };
 		B67A21F629E1BA1900CB02BF /* HomeMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21F529E1BA1900CB02BF /* HomeMoviesViewController.swift */; };
 		B67A21F829E1BB0900CB02BF /* HomeMoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21F729E1BB0900CB02BF /* HomeMoviesView.swift */; };
+		B67A21FB29E1E18A00CB02BF /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21FA29E1E18A00CB02BF /* NetWork.swift */; };
+		B67A21FE29E1E4F400CB02BF /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A21FD29E1E4F400CB02BF /* Popular.swift */; };
+		B67A220129E1E7AB00CB02BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220029E1E7AB00CB02BF /* Services.swift */; };
+		B67A220429E1EBB000CB02BF /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220329E1EBB000CB02BF /* Worker.swift */; };
+		B67A220629E1F20A00CB02BF /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220529E1F20A00CB02BF /* NowPlaying.swift */; };
+		B67A220829E1F3FF00CB02BF /* TopRated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220729E1F3FF00CB02BF /* TopRated.swift */; };
+		B67A220A29E1F54B00CB02BF /* UpComing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220929E1F54B00CB02BF /* UpComing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		B67A21F229E1AF7D00CB02BF /* SearchMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesViewController.swift; sourceTree = "<group>"; };
 		B67A21F529E1BA1900CB02BF /* HomeMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesViewController.swift; sourceTree = "<group>"; };
 		B67A21F729E1BB0900CB02BF /* HomeMoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMoviesView.swift; sourceTree = "<group>"; };
+		B67A21FA29E1E18A00CB02BF /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWork.swift; sourceTree = "<group>"; };
+		B67A21FD29E1E4F400CB02BF /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
+		B67A220029E1E7AB00CB02BF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		B67A220329E1EBB000CB02BF /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		B67A220529E1F20A00CB02BF /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
+		B67A220729E1F3FF00CB02BF /* TopRated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRated.swift; sourceTree = "<group>"; };
+		B67A220929E1F54B00CB02BF /* UpComing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +121,10 @@
 			children = (
 				B67A21E429E1AAA900CB02BF /* Controllers */,
 				B67A21E329E1AAA000CB02BF /* Coordinator */,
+				B67A21FC29E1E4DC00CB02BF /* Model */,
+				B67A21F929E1E16E00CB02BF /* Network */,
+				B67A21FF29E1E75500CB02BF /* NetworkServices */,
+				B67A220229E1EBA100CB02BF /* Worker */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -163,6 +181,41 @@
 				B67A21F529E1BA1900CB02BF /* HomeMoviesViewController.swift */,
 			);
 			path = HomeMovies;
+			sourceTree = "<group>";
+		};
+		B67A21F929E1E16E00CB02BF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B67A21FA29E1E18A00CB02BF /* NetWork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B67A21FC29E1E4DC00CB02BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B67A220529E1F20A00CB02BF /* NowPlaying.swift */,
+				B67A21FD29E1E4F400CB02BF /* Popular.swift */,
+				B67A220729E1F3FF00CB02BF /* TopRated.swift */,
+				B67A220929E1F54B00CB02BF /* UpComing.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B67A21FF29E1E75500CB02BF /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				B67A220029E1E7AB00CB02BF /* Services.swift */,
+			);
+			path = NetworkServices;
+			sourceTree = "<group>";
+		};
+		B67A220229E1EBA100CB02BF /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				B67A220329E1EBB000CB02BF /* Worker.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,8 +332,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B67A220129E1E7AB00CB02BF /* Services.swift in Sources */,
 				B67A21F029E1AF0100CB02BF /* HomeTabBarViewController.swift in Sources */,
 				B67A21CF29E19FBE00CB02BF /* AppDelegate.swift in Sources */,
+				B67A21FB29E1E18A00CB02BF /* NetWork.swift in Sources */,
+				B67A220A29E1F54B00CB02BF /* UpComing.swift in Sources */,
 				B67A21D129E19FBE00CB02BF /* SceneDelegate.swift in Sources */,
 				B67A21F629E1BA1900CB02BF /* HomeMoviesViewController.swift in Sources */,
 				B67A21EB29E1ABC600CB02BF /* PopularMoviesView.swift in Sources */,
@@ -288,7 +344,11 @@
 				B67A21E929E1AB9E00CB02BF /* PopularMoviesViewController.swift in Sources */,
 				B67A21F329E1AF7D00CB02BF /* SearchMoviesViewController.swift in Sources */,
 				B67A21F829E1BB0900CB02BF /* HomeMoviesView.swift in Sources */,
+				B67A220629E1F20A00CB02BF /* NowPlaying.swift in Sources */,
+				B67A220829E1F3FF00CB02BF /* TopRated.swift in Sources */,
 				B67A21ED29E1AE7200CB02BF /* PopularMoviesViewModel.swift in Sources */,
+				B67A21FE29E1E4F400CB02BF /* Popular.swift in Sources */,
+				B67A220429E1EBB000CB02BF /* Worker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
