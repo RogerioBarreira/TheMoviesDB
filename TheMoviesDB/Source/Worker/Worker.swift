@@ -12,17 +12,18 @@ class Worker: NSObject {
     private var myUpComing: Upcoming?
     private var myTopRated: TopRated?
     private var myNowPlaying: NowPlaying?
-    private var myPopMovies: Popular?
+    private var myPopMovies: PopularMovies?
     private let network = NetWork()
     
-    func workerPopularMovies(pageIn: Int = 0, completion: @escaping (Popular?,Bool)-> Void) {
+    func workerPopularMovies(pageIn: Int = 0, completion: @escaping (PopularMovies?,Bool)-> Void) {
+        
         let pageDefaul = 1
         var page = pageDefaul + pageIn
         let basePath = BasePath.popular.rawValue
         guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { return }
         let url = "\(basePath)api_key=\(apiKey)&language=en-US&page=\(page)"
         
-        network.networkGenerics(urlString: url, method: .get, custom: Popular.self) { [weak self] myPopMovies, success in
+        network.networkGenerics(urlString: url, method: .get, custom: PopularMovies.self) { [weak self] myPopMovies, success in
             guard let self = self else { return }
             switch success {
             case true:
@@ -34,7 +35,7 @@ class Worker: NSObject {
         }
     }
     
-    func workerPopularMovies(pageIn: Int = 0, completion: @escaping (NowPlaying?,Bool)-> Void) {
+    func workerNowPlayingMovies(pageIn: Int = 0, completion: @escaping (NowPlaying?,Bool)-> Void) {
         let pageDefaul = 1
         var page = pageDefaul + pageIn
         let basePath = BasePath.nowPlaying.rawValue
@@ -53,7 +54,7 @@ class Worker: NSObject {
         }
     }
     
-    func workerPopularMovies(pageIn: Int = 0, completion: @escaping (TopRated?,Bool)-> Void) {
+    func workerTopRatedMovies(pageIn: Int = 0, completion: @escaping (TopRated?,Bool)-> Void) {
         let pageDefaul = 1
         var page = pageDefaul + pageIn
         let basePath = BasePath.topRated.rawValue
@@ -72,7 +73,7 @@ class Worker: NSObject {
         }
     }
     
-    func workerPopularMovies(pageIn: Int = 0, completion: @escaping (Upcoming?,Bool)-> Void) {
+    func workerUpComingMovies(pageIn: Int = 0, completion: @escaping (Upcoming?,Bool)-> Void) {
         let pageDefaul = 1
         var page = pageDefaul + pageIn
         let basePath = BasePath.upComming.rawValue
