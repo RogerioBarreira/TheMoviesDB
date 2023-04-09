@@ -29,6 +29,9 @@
 		B67A220629E1F20A00CB02BF /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220529E1F20A00CB02BF /* NowPlaying.swift */; };
 		B67A220829E1F3FF00CB02BF /* TopRated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220729E1F3FF00CB02BF /* TopRated.swift */; };
 		B67A220A29E1F54B00CB02BF /* UpComing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67A220929E1F54B00CB02BF /* UpComing.swift */; };
+		B68412D329E30FB800F17A17 /* CollectionViewCellNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68412D229E30FB800F17A17 /* CollectionViewCellNowPlaying.swift */; };
+		B68412D729E3101A00F17A17 /* TableViewCellNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68412D629E3101A00F17A17 /* TableViewCellNowPlaying.swift */; };
+		B68412DA29E310AC00F17A17 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68412D929E310AC00F17A17 /* NowPlayingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		B67A220529E1F20A00CB02BF /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
 		B67A220729E1F3FF00CB02BF /* TopRated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRated.swift; sourceTree = "<group>"; };
 		B67A220929E1F54B00CB02BF /* UpComing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComing.swift; sourceTree = "<group>"; };
+		B68412D229E30FB800F17A17 /* CollectionViewCellNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellNowPlaying.swift; sourceTree = "<group>"; };
+		B68412D629E3101A00F17A17 /* TableViewCellNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellNowPlaying.swift; sourceTree = "<group>"; };
+		B68412D929E310AC00F17A17 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 		B67A21E429E1AAA900CB02BF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B68412D129E30F8500F17A17 /* NowPlayingMovies */,
 				B67A21F429E1BA0600CB02BF /* HomeMovies */,
 				B67A21F129E1AF5400CB02BF /* SearchMovies */,
 				B67A21EE29E1AEAF00CB02BF /* HomeTabBar */,
@@ -246,6 +253,40 @@
 				B67A220329E1EBB000CB02BF /* Worker.swift */,
 			);
 			path = Worker;
+			sourceTree = "<group>";
+		};
+		B68412D129E30F8500F17A17 /* NowPlayingMovies */ = {
+			isa = PBXGroup;
+			children = (
+				B68412D829E3107100F17A17 /* NowPlayingMoviesViewModel */,
+				B68412D529E30FD200F17A17 /* TableViewCellNowPlaying */,
+				B68412D429E30FBE00F17A17 /* CollectionViewNowPlaying */,
+			);
+			path = NowPlayingMovies;
+			sourceTree = "<group>";
+		};
+		B68412D429E30FBE00F17A17 /* CollectionViewNowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				B68412D229E30FB800F17A17 /* CollectionViewCellNowPlaying.swift */,
+			);
+			path = CollectionViewNowPlaying;
+			sourceTree = "<group>";
+		};
+		B68412D529E30FD200F17A17 /* TableViewCellNowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				B68412D629E3101A00F17A17 /* TableViewCellNowPlaying.swift */,
+			);
+			path = TableViewCellNowPlaying;
+			sourceTree = "<group>";
+		};
+		B68412D829E3107100F17A17 /* NowPlayingMoviesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B68412D929E310AC00F17A17 /* NowPlayingViewModel.swift */,
+			);
+			path = NowPlayingMoviesViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68412D329E30FB800F17A17 /* CollectionViewCellNowPlaying.swift in Sources */,
 				B67A220129E1E7AB00CB02BF /* Services.swift in Sources */,
 				B67A21F029E1AF0100CB02BF /* HomeTabBarViewController.swift in Sources */,
 				B67A21CF29E19FBE00CB02BF /* AppDelegate.swift in Sources */,
@@ -371,7 +413,9 @@
 				B67A21F629E1BA1900CB02BF /* HomeMoviesViewController.swift in Sources */,
 				B67A21EB29E1ABC600CB02BF /* PopularMoviesView.swift in Sources */,
 				B62657AD29E268E600902122 /* CollectionViewCellPopularMovies.swift in Sources */,
+				B68412D729E3101A00F17A17 /* TableViewCellNowPlaying.swift in Sources */,
 				B67A21E629E1AAD100CB02BF /* Coordinator.swift in Sources */,
+				B68412DA29E310AC00F17A17 /* NowPlayingViewModel.swift in Sources */,
 				B67A21E929E1AB9E00CB02BF /* PopularMoviesViewController.swift in Sources */,
 				B62657AB29E259B400902122 /* TableViewCellPopularMovies.swift in Sources */,
 				B67A21F329E1AF7D00CB02BF /* SearchMoviesViewController.swift in Sources */,

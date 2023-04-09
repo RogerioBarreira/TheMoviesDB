@@ -30,18 +30,48 @@ class PopularMoviesViewController: UIViewController {
         viewPopularMovies.myTableView.delegate = self
         viewPopularMovies.myTableView.dataSource = self
         viewPopularMovies.myTableView.register(TableViewCellPopularMovies.self, forCellReuseIdentifier: TableViewCellPopularMovies.identifier)
+        
+        viewPopularMovies.myTableView.register(TableViewCellNowPlaying.self, forCellReuseIdentifier: TableViewCellNowPlaying.identifier)
     }
 }
 
 extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Popular Movies"
+        case 1:
+            return "Now Playing"
+        default:
+            return nil 
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Popular Movies"
+        case 1:
+            return "Now Playing"
+        default:
+            return nil
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
         case 0:
             return 1
-        default:
+        case 1:
             return 1
+        default:
+            return 0
         }
     }
     
@@ -50,6 +80,10 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             if let cell = viewPopularMovies.myTableView.dequeueReusableCell(withIdentifier: TableViewCellPopularMovies.identifier, for: indexPath) as? TableViewCellPopularMovies {
+                return cell
+            }
+        case 1:
+            if let cell = viewPopularMovies.myTableView.dequeueReusableCell(withIdentifier: TableViewCellNowPlaying.identifier, for: indexPath) as? TableViewCellNowPlaying {
                 return cell
             }
         default:
@@ -63,6 +97,8 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             return 250
+        case 1:
+            return 200
         default:
             return 0
         }

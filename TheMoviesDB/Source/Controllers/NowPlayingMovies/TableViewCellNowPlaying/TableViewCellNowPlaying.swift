@@ -1,13 +1,13 @@
 //
-//  TableViewCellPopularMovies.swift
+//  TableViewCellNowPlaying.swift
 //  TheMoviesDB
 //
-//  Created by Rogerio Martins on 08/04/23.
+//  Created by Rogerio Martins on 09/04/23.
 //
 
 import UIKit
 
-class TableViewCellPopularMovies: UITableViewCell {
+class TableViewCellNowPlaying: UITableViewCell {
     
     let myCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -27,9 +27,9 @@ class TableViewCellPopularMovies: UITableViewCell {
         load.backgroundColor = .clear
         return load
     }()
-    
-    static let identifier = "TableViewCellPopularMovies"
-    let viewModelPopularMovies = PopularMoviesViewModel()
+
+    static let identifier = "TableViewCellNowPlaying"
+    var viewModelNowPlaying = NowPlayingViewModel()
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -64,12 +64,12 @@ class TableViewCellPopularMovies: UITableViewCell {
     func setupCollectionView() {
         self.myCollectionView.delegate = self
         self.myCollectionView.dataSource = self
-        self.myCollectionView.register(CollectionViewCellPopularMovies.self, forCellWithReuseIdentifier: CollectionViewCellPopularMovies.identifier)
+        self.myCollectionView.register(CollectionViewCellNowPlaying.self, forCellWithReuseIdentifier: CollectionViewCellNowPlaying.identifier)
     }
     
     func setupRequest() {
         loading.startAnimating()
-        viewModelPopularMovies.requestPopularMovieViewModel { [weak self] success in
+        viewModelNowPlaying.requestNowPlayingMoviesViewModel { [weak self] success in
             guard let self = self else { return }
             self.loading.stopAnimating()
             if success {
@@ -81,20 +81,21 @@ class TableViewCellPopularMovies: UITableViewCell {
     }
 }
 
-extension TableViewCellPopularMovies: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension TableViewCellNowPlaying: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModelPopularMovies.numberOfRowPopular
+        return viewModelNowPlaying.numberOfRowNowPlaying
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellPopularMovies.identifier, for: indexPath) as? CollectionViewCellPopularMovies {
-            cell.setupCell(movie: viewModelPopularMovies.cellForRowPopular(indexPath: indexPath))
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellNowPlaying.identifier, for: indexPath) as? CollectionViewCellNowPlaying {
+            cell.setupCell(movie: viewModelNowPlaying.cellForRowsNowPlaying(indexPath: indexPath))
             return cell
         }
         return UICollectionViewCell()
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 250)
+        return CGSize(width: 350, height: 200)
     }
 }
