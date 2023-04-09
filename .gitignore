@@ -91,5 +91,6 @@ fastlane/test_output
 *.xcodeproj
 Info.plist
 *.env
+*.pbxproj
 
 iOSInjectionProject/
