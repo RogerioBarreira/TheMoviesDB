@@ -32,13 +32,15 @@ class PopularMoviesViewController: UIViewController {
         viewPopularMovies.myTableView.register(TableViewCellPopularMovies.self, forCellReuseIdentifier: TableViewCellPopularMovies.identifier)
         
         viewPopularMovies.myTableView.register(TableViewCellNowPlaying.self, forCellReuseIdentifier: TableViewCellNowPlaying.identifier)
+        
+        viewPopularMovies.myTableView.register(TableViewCellTopRated.self, forCellReuseIdentifier: TableViewCellTopRated.identifier)
     }
 }
 
 extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -47,17 +49,8 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
             return "Popular Movies"
         case 1:
             return "Now Playing"
-        default:
-            return nil 
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Popular Movies"
-        case 1:
-            return "Now Playing"
+        case 2:
+            return "Top Rated"
         default:
             return nil
         }
@@ -69,6 +62,8 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
         case 0:
             return 1
         case 1:
+            return 1
+        case 2:
             return 1
         default:
             return 0
@@ -86,6 +81,10 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
             if let cell = viewPopularMovies.myTableView.dequeueReusableCell(withIdentifier: TableViewCellNowPlaying.identifier, for: indexPath) as? TableViewCellNowPlaying {
                 return cell
             }
+        case 2:
+            if let cell = viewPopularMovies.myTableView.dequeueReusableCell(withIdentifier: TableViewCellTopRated.identifier, for: indexPath) as? TableViewCellTopRated {
+                return cell
+            }
         default:
             return UITableViewCell()
         }
@@ -99,6 +98,8 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
             return 250
         case 1:
             return 200
+        case 2:
+            return 350
         default:
             return 0
         }
