@@ -1,5 +1,5 @@
 //
-//  Popular.swift
+//  PopularMovies.swift
 //  TheMoviesDB
 //
 //  Created by Rogerio Martins on 08/04/23.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Popular
-struct Popular: Codable {
+// MARK: - PopularMovies
+struct PopularMovies: Codable {
     let page: Int?
     let results: [Result]?
     let totalPages, totalResults: Int?
