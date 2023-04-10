@@ -1,13 +1,13 @@
 //
-//  TableViewCellPopularMovies.swift
+//  TableViewCellTopRated.swift
 //  TheMoviesDB
 //
-//  Created by Rogerio Martins on 08/04/23.
+//  Created by Rogerio Martins on 09/04/23.
 //
 
 import UIKit
 
-class TableViewCellPopularMovies: UITableViewCell {
+class TableViewCellTopRated: UITableViewCell {
     
     let myCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -24,15 +24,15 @@ class TableViewCellPopularMovies: UITableViewCell {
         let load = UIActivityIndicatorView()
         load.translatesAutoresizingMaskIntoConstraints = false
         load.frame.size = CGSize(width: 50, height: 50)
-        let scale = CGAffineTransform(scaleX: 2, y: 2)
+        let scale = CGAffineTransform(scaleX: 3, y: 3)
         load.transform = scale
         load.color = .blue
         load.backgroundColor = .clear
         return load
     }()
     
-    static let identifier = "TableViewCellPopularMovies"
-    let viewModelPopularMovies = PopularMoviesViewModel()
+    static let identifier = "TableViewCellTopRated"
+    var viewModelTopRated = TopRatedMoviesViewModel()
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -67,12 +67,12 @@ class TableViewCellPopularMovies: UITableViewCell {
     func setupCollectionView() {
         self.myCollectionView.delegate = self
         self.myCollectionView.dataSource = self
-        self.myCollectionView.register(CollectionViewCellPopularMovies.self, forCellWithReuseIdentifier: CollectionViewCellPopularMovies.identifier)
+        self.myCollectionView.register(CollectionViewCellTopRated.self, forCellWithReuseIdentifier: CollectionViewCellTopRated.identifier)
     }
     
     func setupRequest() {
         loading.startAnimating()
-        viewModelPopularMovies.requestPopularMovieViewModel { [weak self] success in
+        viewModelTopRated.requestTopRatedViewModel { [weak self] success in
             guard let self = self else { return }
             self.loading.stopAnimating()
             if success {
@@ -84,20 +84,21 @@ class TableViewCellPopularMovies: UITableViewCell {
     }
 }
 
-extension TableViewCellPopularMovies: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension TableViewCellTopRated: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModelPopularMovies.numberOfRowPopular
+        return viewModelTopRated.numberOfRowsToprated
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellPopularMovies.identifier, for: indexPath) as? CollectionViewCellPopularMovies {
-            cell.setupCell(movie: viewModelPopularMovies.cellForRowPopular(indexPath: indexPath))
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellTopRated.identifier, for: indexPath) as? CollectionViewCellTopRated {
+            cell.setupCell(movie: viewModelTopRated.cellForRowsTopRated(indexPath: indexPath))
             return cell
         }
         return UICollectionViewCell()
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 400)
+        return CGSize(width: 250, height: 300)
     }
 }
