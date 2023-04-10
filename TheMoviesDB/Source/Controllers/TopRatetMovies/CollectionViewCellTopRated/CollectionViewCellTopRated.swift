@@ -1,14 +1,13 @@
 //
-//  CollectionViewCellPopularMovies.swift
+//  CollectionViewCellTopRated.swift
 //  TheMoviesDB
 //
 //  Created by Rogerio Martins on 09/04/23.
 //
 
 import UIKit
-import Kingfisher
 
-class CollectionViewCellPopularMovies: UICollectionViewCell {
+class CollectionViewCellTopRated: UICollectionViewCell {
     
     let contenBackGroud: UIView = {
         let view = UIView()
@@ -34,7 +33,7 @@ class CollectionViewCellPopularMovies: UICollectionViewCell {
         return image
     }()
     
-    static let identifier = "CollectionViewCellPopularMovies"
+    static let identifier = "CollectionViewCellTopRated"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,7 +69,7 @@ class CollectionViewCellPopularMovies: UICollectionViewCell {
         ])
     }
     
-    func setupCell(movie: Result?) {
+    func setupCell(movie: ResultTopRated?) {
         if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie?.posterPath ?? "")") {
             imageMovies.kf.indicatorType = .activity
             imageMovies.kf.setImage(with: url)
