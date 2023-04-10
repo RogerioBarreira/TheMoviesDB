@@ -34,13 +34,15 @@ class PopularMoviesViewController: UIViewController {
         viewPopularMovies.myTableView.register(TableViewCellNowPlaying.self, forCellReuseIdentifier: TableViewCellNowPlaying.identifier)
         
         viewPopularMovies.myTableView.register(TableViewCellTopRated.self, forCellReuseIdentifier: TableViewCellTopRated.identifier)
+        
+        viewPopularMovies.myTableView.register(TableViewCellUpcoming.self, forCellReuseIdentifier: TableViewCellUpcoming.identifier)
     }
 }
 
 extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -51,6 +53,8 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
             return "Now Playing"
         case 2:
             return "Top Rated"
+        case 3:
+            return "Up Comming"
         default:
             return nil
         }
@@ -64,6 +68,8 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
         case 1:
             return 1
         case 2:
+            return 1
+        case 3:
             return 1
         default:
             return 0
@@ -85,6 +91,10 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
             if let cell = viewPopularMovies.myTableView.dequeueReusableCell(withIdentifier: TableViewCellTopRated.identifier, for: indexPath) as? TableViewCellTopRated {
                 return cell
             }
+        case 3:
+            if let cell = viewPopularMovies.myTableView.dequeueReusableCell(withIdentifier: TableViewCellUpcoming.identifier, for: indexPath) as? TableViewCellUpcoming {
+                return cell
+            }
         default:
             return UITableViewCell()
         }
@@ -95,11 +105,13 @@ extension PopularMoviesViewController: UITableViewDelegate, UITableViewDataSourc
         
         switch indexPath.section {
         case 0:
-            return 250
+            return 400
         case 1:
-            return 200
+            return 290
         case 2:
-            return 350
+            return 300
+        case 3:
+            return 600
         default:
             return 0
         }

@@ -34,6 +34,18 @@ class CollectionViewCellNowPlaying: UICollectionViewCell {
         return image
     }()
     
+    let titleMovie: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.textAlignment = .left
+        return label
+    }()
+    
     static let identifier = "CollectionViewCellNowPlaying"
     
     override init(frame: CGRect) {
@@ -48,6 +60,7 @@ class CollectionViewCellNowPlaying: UICollectionViewCell {
     func configConstraints() {
         setupBackGroud()
         setupImage()
+        setupTitleMovies()
     }
     
     func setupBackGroud() {
@@ -56,7 +69,7 @@ class CollectionViewCellNowPlaying: UICollectionViewCell {
             contenBackGroud.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
             contenBackGroud.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             contenBackGroud.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            contenBackGroud.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -8),
+            contenBackGroud.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -40),
         ])
     }
     
@@ -70,8 +83,20 @@ class CollectionViewCellNowPlaying: UICollectionViewCell {
         ])
     }
     
+    func setupTitleMovies() {
+        addSubview(titleMovie)
+        NSLayoutConstraint.activate([
+            titleMovie.topAnchor.constraint(equalTo: contenBackGroud.bottomAnchor, constant: 15),
+            titleMovie.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            titleMovie.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            titleMovie.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+        ])
+    }
+    
     func setupCell(movie: ResultNowPlay?) {
+        titleMovie.text = movie?.title ?? ""
         if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(movie?.backdropPath ?? "")") {
+            imageMovies.kf.indicatorType = .activity
             imageMovies.kf.setImage(with: url)
         } else {
             imageMovies.image = nil

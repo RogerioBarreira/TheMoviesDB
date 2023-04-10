@@ -23,11 +23,14 @@ class TableViewCellNowPlaying: UITableViewCell {
     let loading: UIActivityIndicatorView = {
         let load = UIActivityIndicatorView()
         load.translatesAutoresizingMaskIntoConstraints = false
+        load.frame.size = CGSize(width: 50, height: 50)
+        let scale = CGAffineTransform(scaleX: 3, y: 3)
+        load.transform = scale
         load.color = .blue
         load.backgroundColor = .clear
         return load
     }()
-
+    
     static let identifier = "TableViewCellNowPlaying"
     var viewModelNowPlaying = NowPlayingViewModel()
     
@@ -96,6 +99,6 @@ extension TableViewCellNowPlaying: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 200)
+        return CGSize(width: 390, height: 290)
     }
 }

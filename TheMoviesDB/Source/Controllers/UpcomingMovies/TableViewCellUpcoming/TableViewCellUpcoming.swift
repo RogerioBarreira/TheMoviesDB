@@ -1,5 +1,5 @@
 //
-//  TableViewCellTopRated.swift
+//  TableViewCellUpcoming.swift
 //  TheMoviesDB
 //
 //  Created by Rogerio Martins on 09/04/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewCellTopRated: UITableViewCell {
+class TableViewCellUpcoming: UITableViewCell {
     
     let myCollectionView: UICollectionView = {
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -24,15 +24,15 @@ class TableViewCellTopRated: UITableViewCell {
         let load = UIActivityIndicatorView()
         load.translatesAutoresizingMaskIntoConstraints = false
         load.frame.size = CGSize(width: 50, height: 50)
-        let scale = CGAffineTransform(scaleX: 3, y: 3)
+        let scale = CGAffineTransform(scaleX: 4, y: 4)
         load.transform = scale
         load.color = .blue
         load.backgroundColor = .clear
         return load
     }()
     
-    static let identifier = "TableViewCellTopRated"
-    var viewModelTopRated = TopRatedMoviesViewModel()
+    static let identifier = "TableViewCellUpcoming"
+    let viewModelUpcoming = UpcomingMoviesViewModel()
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -67,12 +67,12 @@ class TableViewCellTopRated: UITableViewCell {
     func setupCollectionView() {
         self.myCollectionView.delegate = self
         self.myCollectionView.dataSource = self
-        self.myCollectionView.register(CollectionViewCellTopRated.self, forCellWithReuseIdentifier: CollectionViewCellTopRated.identifier)
+        self.myCollectionView.register(CollectionViewCellUpcoming.self, forCellWithReuseIdentifier: CollectionViewCellUpcoming.identifier)
     }
     
     func setupRequest() {
         loading.startAnimating()
-        viewModelTopRated.requestTopRatedViewModel { [weak self] success in
+        viewModelUpcoming.requestUpcomingViewModel { [weak self] success in
             guard let self = self else { return }
             self.loading.stopAnimating()
             if success {
@@ -84,21 +84,21 @@ class TableViewCellTopRated: UITableViewCell {
     }
 }
 
-extension TableViewCellTopRated: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension TableViewCellUpcoming: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModelTopRated.numberOfRowsToprated
+        return viewModelUpcoming.numberOfRowsUpComing
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellTopRated.identifier, for: indexPath) as? CollectionViewCellTopRated {
-            cell.setupCell(movie: viewModelTopRated.cellForRowsTopRated(indexPath: indexPath))
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellUpcoming.identifier, for: indexPath) as? CollectionViewCellUpcoming {
+            cell.setupCell(movie: viewModelUpcoming.cellForRowsUpcoming(indexPath: indexPath))
             return cell
         }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 250, height: 300)
+        return CGSize(width: 400, height: 600)
     }
 }

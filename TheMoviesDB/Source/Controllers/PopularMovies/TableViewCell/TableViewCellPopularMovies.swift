@@ -23,6 +23,9 @@ class TableViewCellPopularMovies: UITableViewCell {
     let loading: UIActivityIndicatorView = {
         let load = UIActivityIndicatorView()
         load.translatesAutoresizingMaskIntoConstraints = false
+        load.frame.size = CGSize(width: 50, height: 50)
+        let scale = CGAffineTransform(scaleX: 2, y: 2)
+        load.transform = scale
         load.color = .blue
         load.backgroundColor = .clear
         return load
@@ -95,6 +98,6 @@ extension TableViewCellPopularMovies: UICollectionViewDelegate, UICollectionView
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 250)
+        return CGSize(width: 300, height: 400)
     }
 }
